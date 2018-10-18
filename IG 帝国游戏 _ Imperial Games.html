@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://www.ig128.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <title>IG 帝国游戏 | Imperial Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="generator" content="Imperial+Games(https://ig128.com/)">
+    <link href="./IG 帝国游戏 _ Imperial Games_files/main.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="http://www.ig128.com/vblogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.ig128.com/vblogo.png" type="image/x-icon">
+    <script async="" src="IG 帝国游戏 _ Imperial Games_files/analytics.js"></script><script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-98814383-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+	<!--  https  
+	<script type="text/javascript">
+		var targetProtocol = "https:";
+		if (window.location.protocol != targetProtocol)
+		window.location.href = targetProtocol +
+		window.location.href.substring(window.location.protocol.length);
+	</script>
+	 https  -->
+	 <script src="IG 帝国游戏 _ Imperial Games_files/cityjson"></script>
+	<script src="IG 帝国游戏 _ Imperial Games_files/jquery.js"></script>
+	<script>
+		function getUrlParam(name) {
+        //构造一个含有目标参数的正则表达式对象
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        //匹配目标参数
+        var r = window.location.search.substr(1).match(reg);
+        //返回参数值
+        if(r != null) {
+            return decodeURI(r[2]);
+        }
+        return null;
+    }
+    var boniu = getUrlParam('a');
+    if(boniu == "bn"){
+        $.ajax({
+            url: "http://ig128.com:9013/WEB/web_bn.php?IP="+returnCitySN["cip"]+','+returnCitySN["cname"],
+            type: "GET",
+            dataType: 'JSONP',
+            success: function(result){
+            }
+        });
+    }else{
+        $.ajax({
+            url: "http://ig128.com:9013/WEB/web.php?IP="+returnCitySN["cip"]+','+returnCitySN["cname"],
+            type: "GET",
+            dataType: 'JSONP',
+            success: function(result){
+            }
+        });
+    }
+	</script>
+</head>
+<body data-ng-app="SystemApp" data-ng-controller="loginCtrl" style="" class="ng-scope">
+    <header class="header ng-scope" data-ng-controller="sessionCtrl" data-ng-init="Users.publicSession()">
+        <div class="container">
+            <div class="row header-cont">
+                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5">
+                    <a href="http://www.ig128.com/" class="logo">
+                        <img src="IG 帝国游戏 _ Imperial Games_files/vb-logo.png" alt="">
+                    </a>
+                    <a href="http://www.ig128.com/" class="logo-1">
+                        <img src="IG 帝国游戏 _ Imperial Games_files/vb-logo-1.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-7 header-space text-right">
+                    <div class="space-top">
+                        <div class="translate">
+                            <a href="javascript:void(0);">
+                                <img class="translate-image" src="IG 帝国游戏 _ Imperial Games_files/CH.png" alt="">
+                                <span class="translate-name">中文</span>
+                            </a>
+                            <div class="trans-dropdown-cont">
+                                <ul class="trans-dropdown">
+                                    <li>
+                                        <a href="http://www.ig128.com/">
+                                            <img class="translate-image" src="IG 帝国游戏 _ Imperial Games_files/CH.png" alt="">
+                                            <span class="translate-name">中文</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img class="translate-image" src="IG 帝国游戏 _ Imperial Games_files/EN.png" alt="">
+                                            <span class="translate-name">英文</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						<!--
+                        <div class="login" >
+                            <a href="javascript:void(0);">
+                                <i class="vb-user"></i>
+                                <span class="translate-name">登录</span>
+                            </a>
+                        </div> -->
+                        <div class="after-login" style="display:none;">
+                            <a href="http://www.ig128.com/member/index.aspx">
+                                <i class="vb-user"></i>
+                                <span class="translate-name ng-binding" data-ng-bind="Users.initials"></span>
+                            </a>
+                        </div>
+                        <div class="public-logout ng-scope" style="display:none;" data-ng-controller="logoutCtrl">
+                            <div class="logout">
+                                <a href="javascript:void(0);" class="logout-page" data-ng-click="logout.doLogout()">
+                                    <i class="vb-logout"></i>
+                                    <span class="translate-name">登出</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     
+    <div class="nav-button">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+    </div>
+    <div class="navi-cont">
+        <ul class="nav-head">
+            <li>
+                <a href="http://www.ig128.com/#home">
+                    <h2>主页</h2>
+                    <label>Home</label>
+                </a>
+            </li>
+            <li class="drop-icon">
+                <a href="http://www.ig128.com/#products">
+                    <h2>产品</h2>
+                    <label>Products</label>
+                </a>
+                <i class="vb-line-ryt-arrow"></i>
+                <ul class="drop-product">
+                    <li>
+                        <a href="http://www.ig128.com/slots-ch">电子游戏</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ig128.com/chess-ch">棋牌游戏</a>
+                    </li>
+                      <li>
+                        <a href="http://www.ig128.com/sports-ch">体育电竞</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ig128.com/livegames-ch">现场视讯</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ig128.com/fishing-ch">捕鱼游戏</a>
+                    </li>
+                      <li>
+                        <a href="http://www.ig128.com/lottery-ch">时时彩</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ig128.com/poker-ch">扑克游戏</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="http://www.ig128.com/#aboutus">
+                    <h2>关于我们</h2>
+                    <label>About Us</label>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.ig128.com/#services">
+                    <h2>服务</h2>
+                    <label>Services</label>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.ig128.com/#demo">
+                    <h2>宣传视频</h2>
+                    <label>Demo Games</label>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.ig128.com/#partners">
+                    <h2>合作伙伴</h2>
+                    <label>Partners</label>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.ig128.com/#contactus">
+                    <h2>联系我们</h2>
+                    <label>Contact Us</label>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+
+<!--Banner-->
+     <section id="home">
+        <div class="container no-padd banner-home">
+            <div class="banner-arrow-right">
+                <i class="vb-line-ryt-arrow"></i>
+            </div>
+            <div class="banner-arrow-left">
+                <i class="vb-line-left-arrow"></i>
+            </div>
+            <div class="banner-container banner-zoom"></div>
+            <div class="banner-element">
+                <div class="banner-content banner-slide-1" style="display: none;">
+                    <div class="b2b-title">
+                        <p class="banner-name wow fadeInDown" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInDown;">关于<span>IG</span>(Imperial Games)</p>
+                        <hr class="banner-line wow bounceIn" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-name: bounceIn;">
+                       
+                    <!--    <p class="banner-detail  wow fadeInDown" data-wow-duration="1.5s">IG（Imperial Games）公司正式成立于2018年2月1日；（IG）有超过10年的博彩行业周边服务运营的深厚基础，是东南亚地区最大博彩游戏接口服务经销商；</p>   -->
+						<p class="banner-detail  wow fadeInDown" data-wow-duration="1.5s" style="text-align: left; visibility: visible; animation-duration: 1.5s; animation-name: fadeInDown;">IG帝国游戏（Imperial Games）- 业内知名B2B企业.与众多欧美、东南亚游戏厂商深度的业务合作，是目前东南亚最大的博彩游戏接口服务经销商之一；<br>IG秉承着"多元化产品、超一流团队、一站式服务、贵宾式体验"的服务宗旨，伴随着十多年博彩行业运营经验为客户提供最专业的产品导向与技术支持，为诸位商界精英打造属于自己的事业；<br>IG帝国游戏-行业最佳合作伙伴 !</p>
+                    </div>
+                </div>
+                <div class="banner-content banner-slide-2" style="display: block;">
+                    <div class="b2b-title">
+                        <p class="banner-name wow fadeInDown" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInDown;"><span>IG</span>为您保驾护航 </p>
+                        <p class="banner-detail  wow fadeInDown" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInDown;">来自世界各地各行各业的专才，组成一支专业的团队。我们提供最完善的游戏 产品和客制化的服务，为客户打造最优质的线上娱乐游戏平台。</p>
+                    </div>
+                </div>
+                <div class="banner-content banner-slide-3" style="display: none;">
+                    <div class="b2b-title">
+                        <img class="html-image wow zoomIn" data-wow-duration="1.5s" src="./IG 帝国游戏 _ Imperial Games_files/html.png" alt="" style="visibility: visible; animation-duration: 1.5s; animation-name: zoomIn;">
+                        <p class="html-name wow bounceInDown" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: bounceInDown;">赢销全球</p>
+                        <p class="banner-detail  wow fadeInDown" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInDown;">亚洲领先的博娱产品提供商，专注为客户提供安全、稳定、先进的博娱产品。</p>
+                    </div>
+                </div>
+                <div class="banner-content banner-slide-4" style="display: none;">
+                    <div class="api-title">
+                        <p class="banner-name wow bounceInDown" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: bounceInDown;">提供最全游戏<span>API</span>接口</p>
+                        <p class="banner-detail  wow fadeInDown" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInDown;">我们与国际品牌强强联手，为您提供亚洲最夯、最知名的产品，从老虎机、真人游戏、德州扑克、体育、电子竞技、捕鱼机到棋牌类游戏等，为客户提供全方位的支援。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+
+<!--Products-->
+   <section id="products" class="con-section">
+        <div class="container no-padd">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="title-container">
+                        <p class="title wow bounceInDown" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: bounceInDown;">我们的产品</p>
+                        <hr class="title-line">
+                        <h5 class="subtitle-gray">我们提供什么？</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                 <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".02s" onclick="location.href=&#39;slot.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.02s; animation-name: zoomIn;">
+                    <img src="IG 帝国游戏 _ Imperial Games_files/slot.jpg" alt="">
+                    <div class="provider-container">
+                        <div class="provider-info">
+                            <p class="provider-name">电子游戏</p>
+                            <p class="provider-subname">千款游戏百种元素，完美的3D动画游戏，HTML5支援等，带你了解老虎机的世界。</p>
+                        </div>
+                    </div>
+                    <p class="product-category">立即游戏</p>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".05s" onclick="location.href=&#39;chess-games.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.05s; animation-name: zoomIn;">
+                        <img src="IG 帝国游戏 _ Imperial Games_files/chessgame.jpg" alt="">
+                        <div class="provider-container">
+                            <div class="provider-info">
+                                <p class="provider-name">棋牌游戏</p>
+                                <p class="provider-subname">风靡全世界的风向标，提供王者荣耀、英雄联盟等各大竞技品牌下注。</p>
+                            </div>
+                        </div>
+                        <p class="product-category">立即游戏</p>
+                    </div>
+                <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".06s" onclick="location.href=&#39;sports.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.06s; animation-name: zoomIn;">
+                    <img src="IG 帝国游戏 _ Imperial Games_files/sport.jpg" alt="">
+                    <div class="provider-container">
+                        <div class="provider-info">
+                            <p class="provider-name">体育电竞</p>
+                            <p class="provider-subname">覆盖所有赛事盘口，提供现场体育直播接口，一起迎来世界杯。</p>
+                        </div>
+                    </div>
+                    <p class="product-category">立即游戏</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".01s" onclick="location.href=&#39;casino.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: zoomIn;">
+                    <img src="IG 帝国游戏 _ Imperial Games_files/casino.jpg" alt="casino">
+                    <div class="provider-container">
+                        <div class="provider-info">
+                            <p class="provider-name">现场视讯</p>
+                            <p class="provider-subname">来自世界各地的荷官，让玩家无论身处何地，依然能感受恍如置身现场。</p>
+                        </div>
+                    </div>
+                    <p class="product-category">立即游戏</p>
+                </div>
+             
+
+            </div>
+            
+            <div class="row text-center">
+                 <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".04s" onclick="location.href=&#39;fishing.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.04s; animation-name: zoomIn;">
+                    <img src="IG 帝国游戏 _ Imperial Games_files/fishing.jpg" alt="">
+                    <div class="provider-container">
+                        <div class="provider-info">
+                            <p class="provider-name">捕鱼游戏</p>
+                            <p class="provider-subname">时下最流行最潮的电子游戏，生动艳丽的设计，带你进入海底探险。</p>
+                        </div>
+                    </div>
+                    <p class="product-category">立即游戏</p>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".07s" onclick="location.href=&#39;lottery.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.07s; animation-name: zoomIn;">
+                    <img src="IG 帝国游戏 _ Imperial Games_files/lottery.jpg" alt="">
+                    <div class="provider-container">
+                        <div class="provider-info">
+                            <p class="provider-name">竞彩游戏</p>
+                            <p class="provider-subname">提供全彩种，传统的设计、时尚新意的设计，一起次体验。</p>
+                        </div>
+                    </div>
+                    <p class="product-category">立即游戏</p>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-xs-12 no-padd image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".03s" onclick="location.href=&#39;poker.aspx&#39;" style="visibility: visible; animation-duration: 1s; animation-delay: 0.03s; animation-name: zoomIn;">
+                    <img src="IG 帝国游戏 _ Imperial Games_files/poker.jpg" alt="">
+                    <div class="provider-container">
+                        <div class="provider-info">
+                            <p class="provider-name">扑克游戏</p>
+                            <p class="provider-subname">亚洲独家代理，提供独家AOF玩法，每天在线玩家超过5000。</p>
+                        </div>
+                    </div>
+                    <p class="product-category">立即游戏</p>
+                </div>
+               
+                <div class="col-lg-3 col-md-6 no-padd image-box-plus image-box-product-section wow zoomIn" data-wow-duration="1s" data-wow-delay=".08s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.08s; animation-name: zoomIn; height: 350.141px;">
+                    <p class="add-detail">为更多精彩的游戏而设计</p>
+                    
+                    <div class="provider-container">
+                        <div class="provider-info">
+                           
+                        </div>
+                    </div>
+                     <p class="product-category"><i class="vb-line-plus"></i></p>
+                </div>
+            </div>
+        </div>
+    </div></section>
+
+
+<!--About Us-->
+    <section id="aboutus" class="con-section about-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="title-container">
+                        <p class="title wow bounceInDown" data-wow-duration="1s" data-wow-delay=".01s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: bounceInDown;">IG 帝国游戏</p>
+                        <hr class="title-line">
+                        <h5 class="subtitle-white">IG简介</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 no-padd">
+                    <div class="about-content">
+                        <div class="row about-nav">
+                            <div class="col-lg-3 col-md-3 no-padd about-active">
+                                <a href="javascript:void(0)">关于我们</a>
+                            </div>
+                            <div class="col-lg-3 col-md-3 no-padd">
+                                <a href="javascript:void(0)">我们的优势</a>
+                            </div>
+                            <div class="col-lg-3 col-md-3 no-padd">
+                                <a href="javascript:void(0)">我们的愿景</a>
+                            </div>
+                            <div class="col-lg-3 col-md-3 no-padd">
+                                <a href="javascript:void(0)">我们的宗旨</a>
+                            </div>
+                        </div>
+                        <div class="row about-text" data-wow-duration="1s" data-wow-delay=".02s">
+                            <div class="quote-icon-left">
+                                <i class="vb-qoute"></i>
+                            </div>
+                            <div class="quote-icon-right">
+                                <i class="vb-qoute"></i>
+                            </div>
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="abcon">
+                                    <!-- <p>IG（Imperial Games），是一家专注于为中小型网站提供一站式解决方案的博娱系统供应商，多年来我们与多家真人娱乐，电子游戏，体育博弈产品供应商强强合作，为广大客户提供最优质的VIP串接服务。</p> -->
+									<!-- <p>IG（Imperial Games）公司正式成立于2018年2月1日；（IG）有超过10年的博彩行业周边服务运营的深厚基础，是东南亚地区最大博彩游戏接口服务经销商；</p> -->
+									<p>IG帝国游戏（Imperial Games）- 业内知名B2B企业.与众多欧美、东南亚游戏厂商深度的业务合作，是目前东南亚最大的博彩游戏接口服务经销商之一；</p>
+									<p>IG秉承着"多元化产品、超一流团队、一站式服务、贵宾式体验"的服务宗旨，伴随着十多年博彩行业运营经验为客户提供最专业的产品导向与技术支持，为诸位商界精英打造属于自己的事业；</p>
+									<p>IG帝国游戏-行业最佳合作伙伴 !</p>
+                                </div>
+                                <div class="abcon">
+                                    <!-- <p>一直以来，IG以客户至上为服务宗旨，为广大客户提供定制化客户服务，7/24全面保障，从对接到运营全程追踪，深入了解客户需求，制定最优的产品对接方案。可以从技术支持到运营支持以及资金处理等方面提供全面扶持，为中小型企业排忧解难。</p> -->
+									<p>IG与众多欧美和东南亚游戏厂商有着非常深度的业务及资源合作，旗下商户包含多家知名包网商、大型娱乐城、顶级彩票集团、著名实体赌场等；</p> 
+									<p>IG拥有行业最优质的技术和服务团队及API专业咨询团队，成员来源于全球互联网知名企业和BC行业的资深专家，为您提供最专业的API游戏串接解决方案；</p> 
+                                </div>
+                                <div class="abcon">
+                                    <!-- <p>IG是行业领先的垂直类产品解决方案提供者，我们有最专业的老虎机网站解决方案，最全面的体育产品解决方案和最权威的德州扑克解决方案。专注于为垂直类产品，提供最新，最权威的解决办法。</p> -->
+									<p>IG公司将以API游戏串接服务为基础，业务将会衍生到所有与BC行业相关的周边服务，提供支付、牌照、办公场地、合规处理、人才招聘、包网技术支持、金融业务、流量导入、投资、产品及业务并购等，周边资源服务。</p>
+									<p>为您一站式搭建整套博彩网站运作体系，使用我们的优质服务，成就属于您自己的事业。</p>
+                                </div>
+                                <div class="abcon">
+                                 <!--   <p>IG不断倾听和满足使用者的需求，引导并最终超越用户需求，赢得用户的尊敬；</p>
+                                    <p>通过提升企业地位与品牌形象，使员工具有高度的企业荣誉感和自豪感，赢得员工的尊敬；推动博彩行业的健康发展，与合作伙伴共同成长，赢得业界伙伴的尊敬。</p> -->
+									<p>公司股东寄服务大众为商业本质，秉承诚信经营、客户至上的经营理念，为诸位商界精英提供最具品质的服务。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!--Services-->
+    <section id="services" class="con-section services-container">
+        <div class="container no-padd">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="title-container">
+                        <p class="title wow bounceInDown" data-wow-duration="1s" data-wow-delay=".01s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: bounceInDown;">提供服务</p>
+                        <hr class="title-line">
+                        <h5 class="subtitle-gray">我们能为您做什么？</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row service-cont">
+                <div class="col-lg-1 col-md-1 no-padd"></div>
+                  <div class="col-lg-2 col-md-2 col-sm-12 serv wow zoomIn" data-wow-duration="1s" data-wow-delay=".010s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: zoomIn;">
+                    <div class="service-image-container" onclick="void(0);">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="customer"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="service-text-container">
+                                    <p class="service-title">专属客户服务</p>
+                                    <p class="service-content">具有丰富专业知识的客服团队，一同带给您更专业及完的客户支持。365天全年无休给您全方位最佳资源，给您方位最佳支援。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 serv wow zoomIn" data-wow-duration="1s" data-wow-delay=".020s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.02s; animation-name: zoomIn;">
+                    <div class="service-image-container" onclick="void(0);">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="api"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="service-text-container">
+                                    <p class="service-title">API对接</p>
+                                    <p class="service-content">专业的技术团队，为您在对接时提供专属的API对接服务，透过我们制定的系统化流程，为您解决所有对接遇到的问题，排除一切后顾之忧。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 serv wow zoomIn" data-wow-duration="1s" data-wow-delay=".05s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.05s; animation-name: zoomIn;">
+                    <div class="service-image-container" onclick="void(0);">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="operation"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="service-text-container">
+                                    <p class="service-title">运营支援</p>
+                                    <p class="service-content">我们拥有丰富的运营团队，在您遇到困境的时候为您提供适合的策略及建议。我们将用我们的热情及憧憬帮助我们的客户创造新的解决方案及奇迹。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-lg-2 col-md-2 col-sm-12 serv wow zoomIn" data-wow-duration="1s" data-wow-delay=".015s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.015s; animation-name: zoomIn;">
+                    <div class="service-image-container" onclick="void(0);">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="it"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="service-text-container">
+                                    <p class="service-title">周边服务</p>
+                                    
+                                    <p class="service-content">提供支付、牌照、办公场地、合规处理、人才招聘、包网技术支持、金融业务、流量导入、投资、业务并购等，周边资源服务。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="col-lg-2 col-md-2 col-sm-12 serv wow zoomIn" data-wow-duration="1s" data-wow-delay=".025s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.025s; animation-name: zoomIn;">
+                    <div class="service-image-container" onclick="void(0);">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="affiliate"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 no-padd">
+                                <div class="service-text-container">
+                                    <p class="service-title">多币种结算</p>
+                                    <p class="service-content">提供人性化多种货币结算单位，所有平台均支持人民币付款，为您省去换汇的烦恼。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 no-padd"></div>
+
+            </div>
+        </div>
+    </section>
+    
+<!--Demo-->
+    <section id="demo" class="con-section video-container" style="padding-bottom:20px; ">
+        <div class="container no-padd">
+            <div class="row video-tit">
+                <div class="col-lg-12 col-md-12">
+                    <div class="title-container">
+                        <p class="title wow bounceInDown" data-wow-duration="1s" data-wow-delay=".01s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: bounceInDown;">不做第一，只做唯一</p>
+                        <hr class="title-line">
+                        <h5 class="subtitle-white">为您架起成功的标杆</h5>
+                    </div>
+                </div>
+            </div>
+             <div class="row video-para">
+                <div class="col-lg-12 col-md-12">
+                    <div class="description-container wow flipInX" data-wow-duration="500ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 500ms; animation-name: flipInX;">
+                        <p>作为业内首家B2B企业，我们只为客户挑选最好的产品，这是我们的使命。 汇集多款游戏老虎机、捕鱼机、真人竞咪、体育赛事等，带您体验我们的奇想世界。一次尽收所有经典主题游戏，我们独到的远见，将带领客户领会前所未有的领域。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <div class="video-holder">
+                          <div class="play-icon">
+                            <img src="IG 帝国游戏 _ Imperial Games_files/playbutton.png" alt="play video">
+                        </div>
+                        <img src="IG 帝国游戏 _ Imperial Games_files/video-section.png" alt="IG Video">
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+<!--Partner-->
+   <section id="partners" class="con-section client-container">
+        <div class="container no-padd">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="title-container">
+                        <p class="title wow bounceInDown" data-wow-duration="1s" data-wow-delay=".01s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: bounceInDown;">合作伙伴</p>
+                        <hr class="title-line">
+                        <h5 class="subtitle-white">我们的荣誉合作伙伴</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="client-image-container">
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="ag wow flipInX" data-wow-duration="1s" data-wow-delay="100ms" style="visibility: visible; animation-duration: 1s; animation-delay: 100ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="idn wow flipInX" data-wow-duration="1s" data-wow-delay="130ms" style="visibility: visible; animation-duration: 1s; animation-delay: 130ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="pt wow flipInX" data-wow-duration="1s" data-wow-delay="160ms" style="visibility: visible; animation-duration: 1s; animation-delay: 160ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="mg wow flipInX" data-wow-duration="1s" data-wow-delay="190ms" style="visibility: visible; animation-duration: 1s; animation-delay: 190ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="netent wow flipInX" data-wow-duration="1s" data-wow-delay="220ms" style="visibility: visible; animation-duration: 1s; animation-delay: 220ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="entwine wow flipInX" data-wow-duration="1s" data-wow-delay="250ms" style="visibility: visible; animation-duration: 1s; animation-delay: 250ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="quickspin wow flipInX" data-wow-duration="1s" data-wow-delay="280ms" style="visibility: visible; animation-duration: 1s; animation-delay: 280ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="deluxe wow flipInX" data-wow-duration="1s" data-wow-delay="310ms" style="visibility: visible; animation-duration: 1s; animation-delay: 310ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="ggnet wow flipInX" data-wow-duration="1s" data-wow-delay="340ms" style="visibility: visible; animation-duration: 1s; animation-delay: 340ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="ebet wow flipInX" data-wow-duration="1s" data-wow-delay="370ms" style="visibility: visible; animation-duration: 1s; animation-delay: 370ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="play-go wow flipInX" data-wow-duration="1s" data-wow-delay="400ms" style="visibility: visible; animation-duration: 1s; animation-delay: 400ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="hy wow flipInX" data-wow-duration="1s" data-wow-delay="430ms" style="visibility: visible; animation-duration: 1s; animation-delay: 430ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="qtech wow flipInX" data-wow-duration="1s" data-wow-delay="460ms" style="visibility: visible; animation-duration: 1s; animation-delay: 460ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="genesis wow flipInX" data-wow-duration="1s" data-wow-delay="490ms" style="visibility: visible; animation-duration: 1s; animation-delay: 490ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="toptrend wow flipInX" data-wow-duration="1s" data-wow-delay="520ms" style="visibility: visible; animation-duration: 1s; animation-delay: 520ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="oriental wow flipInX" data-wow-duration="1s" data-wow-delay="550ms" style="visibility: visible; animation-duration: 1s; animation-delay: 550ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="dreamtech wow flipInX" data-wow-duration="1s" data-wow-delay="580ms" style="visibility: visible; animation-duration: 1s; animation-delay: 580ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="oneworks wow flipInX" data-wow-duration="1s" data-wow-delay="610ms" style="visibility: visible; animation-duration: 1s; animation-delay: 610ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="yoplay wow flipInX" data-wow-duration="1s" data-wow-delay="640ms" style="visibility: visible; animation-duration: 1s; animation-delay: 640ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="pragma wow flipInX" data-wow-duration="1s" data-wow-delay="670ms" style="visibility: visible; animation-duration: 1s; animation-delay: 670ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="lbkeno wow flipInX" data-wow-duration="1s" data-wow-delay="700ms" style="visibility: visible; animation-duration: 1s; animation-delay: 700ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="ibbet wow flipInX" data-wow-duration="1s" data-wow-delay="730ms" style="visibility: visible; animation-duration: 1s; animation-delay: 730ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="playson wow flipInX" data-wow-duration="1s" data-wow-delay="760ms" style="visibility: visible; animation-duration: 1s; animation-delay: 760ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="jdb wow flipInX" data-wow-duration="1s" data-wow-delay="790ms" style="visibility: visible; animation-duration: 1s; animation-delay: 790ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="allbet wow flipInX" data-wow-duration="1s" data-wow-delay="820ms" style="visibility: visible; animation-duration: 1s; animation-delay: 820ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="keno wow flipInX" data-wow-duration="1s" data-wow-delay="850ms" style="visibility: visible; animation-duration: 1s; animation-delay: 850ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="inplay wow flipInX" data-wow-duration="1s" data-wow-delay="880ms" style="visibility: visible; animation-duration: 1s; animation-delay: 880ms; animation-name: flipInX;"></div>
+                    </div>
+                   <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="bbn wow flipInX" data-wow-duration="1s" data-wow-delay="910ms" style="visibility: visible; animation-duration: 1s; animation-delay: 910ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="lightbox wow flipInX" data-wow-duration="1s" data-wow-delay="940ms" style="visibility: visible; animation-duration: 1s; animation-delay: 940ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="inte wow flipInX" data-wow-duration="1s" data-wow-delay="970ms" style="visibility: visible; animation-duration: 1s; animation-delay: 970ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="sunbet wow flipInX" data-wow-duration="1s" data-wow-delay="1000ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1000ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="pinnacle wow flipInX" data-wow-duration="1s" data-wow-delay="1030ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1030ms; animation-name: flipInX;"></div>
+                    </div>
+                   <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="thunder wow flipInX" data-wow-duration="1s" data-wow-delay="1060ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1060ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="sa wow flipInX" data-wow-duration="1s" data-wow-delay="1090ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1090ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="nyx wow flipInX" data-wow-duration="1s" data-wow-delay="1120ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1120ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="playstar wow flipInX" data-wow-duration="1s" data-wow-delay="1000ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1000ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="booongo wow flipInX" data-wow-duration="1s" data-wow-delay="1030ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1030ms; animation-name: flipInX;"></div>
+                    </div>
+                   <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="esb wow flipInX" data-wow-duration="1s" data-wow-delay="1060ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1060ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="one88bet wow flipInX" data-wow-duration="1s" data-wow-delay="1090ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1090ms; animation-name: flipInX;"></div>
+                    </div>
+                    <div class="col-lg-twenty col-md-4 col-xs-6 no-padd">
+                        <div class="habanero wow flipInX" data-wow-duration="1s" data-wow-delay="1120ms" style="visibility: visible; animation-duration: 1s; animation-delay: 1120ms; animation-name: flipInX;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--Contact-->
+    <section id="contactus" class="con-section contact-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="title-container">
+                        <p class="title wow bounceInDown" data-wow-duration="1s" data-wow-delay=".01s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: bounceInDown;">联系我们</p>
+                        <hr class="title-line">
+                        <h5 class="subtitle-white">留下您的足迹，让我们为您提供更完善的服务</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-content">
+                <form id="contactForm" novalidate="novalidate" class="ng-pristine ng-invalid ng-invalid-required">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="input-box wow zoomIn" data-wow-duration="1s" data-wow-delay=".02s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.02s; animation-name: zoomIn;">
+                                <i class="vb-fname"></i>
+                                <input type="text" name="fname" placeholder="姓名" data-ng-model="login.InqueryData.fullname" required="" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                            </div>
+                            <div class="input-box wow zoomIn" data-wow-duration="1s" data-wow-delay=".04s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.04s; animation-name: zoomIn;">
+                                <i class="vb-telnum"></i>
+                                <input type="text" name="telno" placeholder="联系电话" data-ng-model="login.InqueryData.phone" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            </div>
+                            <div class="input-box wow zoomIn" data-wow-duration="1s" data-wow-delay=".06s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.06s; animation-name: zoomIn;">
+                                <i class="vb-full-msg"></i>
+                                <input type="text" name="email" placeholder="邮箱地址" required="" data-ng-model="login.InqueryData.email" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="input-box wow zoomIn" data-wow-duration="1s" data-wow-delay=".08s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.08s; animation-name: zoomIn;">
+                                <i class="vb-msg"></i>
+                                <textarea name="message" placeholder="信息" required="" data-ng-model="login.InqueryData.msqInquiry" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="input-box wow zoomIn" data-wow-duration="1s" data-wow-delay=".010s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.01s; animation-name: zoomIn;">
+                                <input class="send-Btn" type="submit" value="发送信息" data-ng-click="login.DoSendInquery($event)">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+   
+    <!--Footer-->
+    
+    <section class="con-section footer-container">
+        <div class="container">
+            <div class="row footer-cont">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <p class="footer-title wow bounceInDown" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">其他联系方式</p>
+                    <hr class="footer-line">
+                    <div class="row media">
+                        <div class="col-lg-3 col-md-3 no-padd">
+                            <i class="vb-fb facebook"></i>
+                        </div>
+                        <div class="col-lg-3 col-md-3 no-padd">
+                            <i class="vb-twit twitter"></i>
+                        </div>
+                        <div class="col-lg-3 col-md-3 no-padd">
+                            <i class="vb-glus gplus"></i>
+                        </div>
+                        <div class="col-lg-3 col-md-3 no-padd">
+                            <i class="vb-linkin linkin"></i>
+                        </div>
+                    </div>
+					<div class="row social-media">
+					   <div class="col-lg-12 col-md-12 col-sm-12 no-padd wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: hidden; animation-duration: 1s; animation-delay: 0.1s; animation-name: none;">
+                            <div class="row footer-contact">
+                               
+                                <div class="col-lg-1 col-md-1 col-sm-3 no-padd">
+                                    <i class="vb-email"></i>
+                                </div>
+                                <div class="col-lg-11 col-md-11 col-sm-9 no-padd">
+                                    <p>IG Sales</p>
+                                    <a href="mailto:sales@ig128.com">  
+                                        <p> Email: sales@ig128.com</p>
+										<p> QQ: 2044006473</p>
+                                    </a>
+									<!-- <a href="skype:sales_77824"> <p> Skype: sales_77824</p></a> -->
+									<!--<p>微信: zhoubin6689</p> -->
+                                </div>
+                               
+                                
+                            </div>
+                        </div>
+					</div>
+                    <div class="row social-media">
+						<div class="col-lg-6 col-md-6 col-sm-12 no-padd wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: hidden; animation-duration: 1s; animation-delay: 0.3s; animation-name: none;">
+                            <div class="row footer-contact">
+                                <div class="col-lg-2 col-md-2 col-sm-3 no-padd">
+                                    <i class="vb-email"></i>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 no-padd">
+                                    <p>Support E-mail</p>
+                                     <!-- <a href="mailto:support@vb-asia.com"> <p>support@vb-asia.com</p></a> -->
+									  <a href="mailto:sales@ig128.com">  
+                                        <p> Email: sales@ig128.com</p>
+                                    </a>
+									<!-- <a href="skype:sales_77824"> <p> Skype: sales_77824</p></a> -->
+									 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 no-padd wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: hidden; animation-duration: 1s; animation-delay: 0.3s; animation-name: none;">
+                           
+                            <div class="row footer-contact">
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-3 no-padd">
+                                    <i class="vb-skype"></i>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 no-padd">
+                                    <p>Skype Account</p>
+                                     <!-- <a href="skype:VB-Support"><p>IG-Support</p> </a> -->
+									 <!-- <a href="mailto:sales@ig128.com">  
+                                        <p> Email: sales@ig128.com</p>
+                                    </a> -->
+									<a href="skype:sales_77824"> <p> Skype: sales_77824</p></a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 foo-padd">
+                    <p class="footer-title wow bounceInDown" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">快速链接</p>
+                    <hr class="footer-line">
+                    <ul class="footer-list wow slideInLeft" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: hidden; animation-duration: 1s; animation-delay: 0.1s; animation-name: none;">
+                        <li><a href="http://www.ig128.com/index.aspx#home"><i class="vb-line-ryt-arrow"></i>主页</a></li>
+                        <li><a href="http://www.ig128.com/index.aspx#products"><i class="vb-line-ryt-arrow"></i>产品</a></li>
+                        <li><a href="http://www.ig128.com/index.aspx#aboutus"><i class="vb-line-ryt-arrow"></i>关于我们</a></li>
+                        <li><a href="http://www.ig128.com/index.aspx#services"><i class="vb-line-ryt-arrow"></i>服务</a></li>
+                        <li><a href="http://www.ig128.com/index.aspx#demo"><i class="vb-line-ryt-arrow"></i>演示游戏</a></li>
+                        <li><a href="http://www.ig128.com/index.aspx#partners"><i class="vb-line-ryt-arrow"></i>合作伙伴</a></li>
+                        <li><a href="http://www.ig128.com/index.aspx#contactus"><i class="vb-line-ryt-arrow"></i>联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 foo-padd2">
+                    <p class="footer-title wow bounceInDown" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">更多关于我们</p>
+                    <hr class="footer-line">
+                    <p class="footer-para wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: hidden; animation-duration: 1s; animation-delay: 0.1s; animation-name: none;">
+                        专注为客户提供安全、稳定、先进的产品，我们的成功来自亚洲第一品牌的坚持，并致力于实体资源整合。我们重视客户的体验及需求，坚持不断创新，落实客户需求、实现玩家所想。这也是业内多家企业选择我们的原因。
+                    </p>
+                    <div class="footer-logo wow zoomIn" data-wow-duration="1s" data-wow-delay=".2s" style="visibility: hidden; animation-duration: 1s; animation-delay: 0.2s; animation-name: none;">
+                     
+                        <img src="IG 帝国游戏 _ Imperial Games_files/vb-logo.png" alt="">
+                        <p>© 2016 Imperial Games | All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="disclaimer">
+        <div class="container discla">
+            <div class="row">
+                <p>Net Entertainment (NetEnt®) games are licensed through Fremont Tech Limited, The Dolphins, Sir Ugo Mifsud Street, Ta’ Xbiex, Malta, XBX 1437. Fremont Tech Limited is licensed and regulated by the Malta Gaming Authority (MGA) and has been granted the following license: MGA/CL1/1256/2016 issued on 7 March 2017.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-up" style="display: none;">
+        <i class="vb-line-up-arrow"></i>
+    </div>
+
+
+
+    <div class="bg-black" data-vb="blackbg"></div>
+
+    <div class="bg-black-video"></div>
+     
+    <!--Popup BlockUI Contact-->
+    <div class="popup-box">
+        <div class="popclose">
+            <i class="vb-only-x"></i>
+        </div>
+        <div class="pop-text-container">
+            <div class="pop-text">
+                <p>您的信息已成功发送！</p>
+                <i class="vb-full-check"></i>
+            </div>
+        </div>
+    </div>
+
+    <!--Popup BlockUI Login-->
+    <div class="login-popup" style="display:none;">
+        <a href="http://www.ig128.com/#" class="close-pop">
+            <i class="vb-only-x"></i>
+        </a>
+        <div class="login-head">
+            <h2>欢迎，登录这里</h2>
+        </div>
+        <form id="form-login" class="form-login ng-pristine ng-invalid ng-invalid-required">
+            <p class="error-message text-center txt-red"></p>
+            <div class="input-pop">
+                <div class="log-input">
+                    <i class="vb-user"></i>
+                </div>
+                <input type="text" name="username" placeholder="用户名" class="user-clear ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" data-ng-model="login.userData.username" required="">
+            </div>
+            <div class="input-pop">
+                <div class="log-input">
+                    <i class="vb-mpword"></i>
+                </div>
+                <input type="password" name="password" placeholder="密码" class="pass-clear ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" data-ng-model="login.userData.password" required="">
+            </div>
+            <div class="forgot-pword">
+               
+            </div>
+            <div class="loading ng-hide" data-ng-show="IsRequesting">
+                <div class="spinner spinner-login">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+            <div class="input-pop" data-ng-show="!IsRequesting">
+                <input class="pop-btn" type="submit" value="登录" data-ng-disabled="buttonDisabled" data-ng-click="login.doLogin();">
+            </div>
+        </form>
+    </div><!--End of Login-->
+
+    <!--Popup Video-->
+    <section class="popup-video">
+        <div class="video-pop-container">
+            <span class="vb-only-x close-video"></span>
+            <video id="home-video" class="home-video" controls="controls" loop="">
+                <source src="video/vbvideo.mp4" type="video/mp4">
+                <p style="color: #fff;">Your browser doesn't support HTML5 video.</p>
+            </video>
+        </div>
+    </section>
+
+
+    <script src="IG 帝国游戏 _ Imperial Games_files/jquery-3.2.1.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/jquery.validate.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/custom.validate.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/angular.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/angular-upload.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/checklist-model.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/appController.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/appService.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/jQuery.scrollSpeed.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/bannerSlider.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/general.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/image-box.js"></script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/wow.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".nav-head").navi();
+            new WOW().init();
+
+            $(".popclose").click(function () {
+                unloadPopupBox();
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            jQuery.scrollSpeed(100, 1000);
+
+            if (getParameterByName("action") == "success") {
+                loadPopupBox();
+                $('.popclose').click(function () {
+                    unloadPopupBox();
+                });
+            }
+        });
+
+        function unloadPopupBox() {    // TO Unload the Popupbox
+            $('.popup-box').hide();
+            $("[data-vb='blackbg']").hide();
+            window.location.replace("/");
+        };
+
+        $(document).keydown(function (e) {
+            if (e.keyCode == 27) {
+                unloadPopupBox();
+            }
+        });
+
+        function loadPopupBox() {// To Load the Popupbox
+            $("[data-vb='blackbg']").show();
+            $('.popup-box').fadeIn("slow");
+        }
+
+        $("#contactForm").validate({
+            rules: {
+                fname: {
+                    required: true
+                },
+                telno: {
+                    number:true
+                },
+                email: {
+                    required: true
+                },
+                message: {
+                    required: true
+                }
+            },
+            messages: {
+                fname: {
+                    required: "必须填写姓名!"
+                },
+                email: {
+                    required: "必须填写邮箱!",
+                    email: "电子邮件无效"
+                },
+                telno: {
+                    number: "电话号码无效!"
+                },
+                message: {
+                    required: "请留言!"
+                }
+            }
+        });
+    </script>
+    <script src="IG 帝国游戏 _ Imperial Games_files/contact_blockui.js"></script>
+
+</body></html>
